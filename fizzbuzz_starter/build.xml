@@ -1,0 +1,19 @@
+<project name="fizzbuzz" default="build" basedir=".">
+        <property file="build.properties"/>
+
+        <path id="classpath">
+                <fileset dir="libs">
+                        <include name="*.jar"/>
+                </fileset>
+                <pathelement location="bin"/>
+        </path>
+
+        <target name="build">
+                <mkdir dir="bin"/>
+                <javac classpathref="classpath" includeantruntime="false" destdir="bin">
+                        <src path="support"/>
+                        <src path="src"/>
+                        <src path="test"/>
+                </javac>
+        </target>
+</project>
